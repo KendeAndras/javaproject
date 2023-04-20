@@ -1,6 +1,8 @@
 package views;
 
-public class RegistryView {
+import javafx.scene.layout.VBox;
+
+public class RegistryView extends VBox {
 
     public RegistryView() {
         //TODO
