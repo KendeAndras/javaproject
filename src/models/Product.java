@@ -6,13 +6,10 @@ public class Product {
     int id;
     String name;
     String category;
-    int brandId;
+    String brand;
     String description;
     Double price;
     String image;
-    String imgpath;
-    Date created_at;
-    Date updated_at;
 
     public Product() {
     }
@@ -41,12 +38,12 @@ public class Product {
         this.category = category;
     }
 
-    public int getBrandId() {
-        return brandId;
+    public String getBrand() {
+        return brand;
     }
 
-    public void setBrand(int brandId) {
-        this.brandId = brandId;
+    public void setBrand(String brand) {
+        this.brand = brand;
     }
 
     public String getDescription() {
@@ -73,29 +70,4 @@ public class Product {
         this.image = image;
     }
 
-    public String getImgpath() {
-        return imgpath;
-    }
-
-    public void setImgpath(String imgpath) {
-        this.imgpath = imgpath;
-    }
-
-    public Date getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(Date created_at) {
-        this.created_at = created_at;
-    }
-
-    public Date getUpdated_at() {
-        return updated_at;
-    }
-
-    public void setUpdated_at(Date updated_at) {
-        this.updated_at = updated_at;
-    }
-
-    
 }

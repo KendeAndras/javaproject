@@ -32,5 +32,7 @@ public class AuthService {
     public void login(){
         String enpoint = "login";
         String url = this.host + enpoint;
+
+            //TODO
     }
 }
