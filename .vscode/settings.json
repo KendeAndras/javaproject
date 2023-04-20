@@ -3,6 +3,14 @@
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
         "lib/**/*.jar",
-        "c:\\Users\\Lenovo T450\\Downloads\\gson-2.10.1.jar"
+        "c:\\Users\\Lenovo T450\\Downloads\\gson-2.10.1.jar",
+        "c:\\Users\\Lenovo T450\\Desktop\\prog\\lib\\javafx.base.jar",
+        "c:\\Users\\Lenovo T450\\Desktop\\prog\\lib\\javafx.controls.jar",
+        "c:\\Users\\Lenovo T450\\Desktop\\prog\\lib\\javafx.fxml.jar",
+        "c:\\Users\\Lenovo T450\\Desktop\\prog\\lib\\javafx.graphics.jar",
+        "c:\\Users\\Lenovo T450\\Desktop\\prog\\lib\\javafx.media.jar",
+        "c:\\Users\\Lenovo T450\\Desktop\\prog\\lib\\javafx.swing.jar",
+        "c:\\Users\\Lenovo T450\\Desktop\\prog\\lib\\javafx.web.jar",
+        "c:\\Users\\Lenovo T450\\Desktop\\prog\\lib\\javafx-swt.jar"
     ]
 }

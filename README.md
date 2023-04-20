@@ -1,6 +1,6 @@
 ## details:
 
--Version: 0.0
+-Version: 0.0.1
 -environoment: vscode
 -java version: java 17.0.1 2021-10-19 LTS
 

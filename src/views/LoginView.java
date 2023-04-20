@@ -1,5 +1,11 @@
 package views;
 
-public class LoginView {
+import javafx.scene.layout.VBox;
+
+public class LoginView extends VBox {
+
+    public LoginView() {
+        //TODO
+    }
     
 }
