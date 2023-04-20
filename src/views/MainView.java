@@ -19,8 +19,8 @@ public class MainView extends VBox {
         prodLabel = new Label("Termékek");
     
         this.createTable();
-        //this.getChildren().add(prodLabel);
-        //this.getChildren().add(tableView);
+        this.getChildren().add(prodLabel);
+        this.getChildren().add(tableView);
 
     }
     private void createTable() {

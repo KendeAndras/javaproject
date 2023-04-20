@@ -1,8 +1,9 @@
 ## details:
 
--Version: 0.0.2
--environoment: vscode
--java version: java 17.0.1 2021-10-19 LTS
+-Version : 0.1
+-environoment : vscode
+-java version : java 17.0.1 2021-10-19 LTS
+-platform : Windows10 Pro x64
 
 
 ## To run:
@@ -19,6 +20,9 @@
             javafx-swt.jar
     -as ReferencedLibrary to the project
 
+-TO RUN : vscode: "Run" >> "Run Without Debugging"
+        OR
+        push "Ctrl+F5" combination on Windows
 
 ## licence:
 

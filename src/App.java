@@ -12,7 +12,7 @@ public class App extends Application {
     public void start(Stage stage) {
 
         new AuthService();
-        // .registry("tibi", "tibi@zold.lan", "titok");
+        //TODO: authentication
 
         MainController mainController = new MainController();
         Tabs tab = mainController.getTab();

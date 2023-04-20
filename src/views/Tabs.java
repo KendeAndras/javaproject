@@ -2,6 +2,8 @@ package views;
 
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
+import views.userViews.LoginView;
+import views.userViews.RegistryView;
 
 public class Tabs extends TabPane {
     Tab productTab;
