@@ -13,7 +13,7 @@ public class Tabs extends TabPane {
     LoginView loginView;
     RegistryView registryView;
 
-    public Tabs (MainView mainView) {
+    public Tabs (MainView mainView, LoginView loginView, RegistryView registryView) {
         this.mainView = mainView;
         this.loginView = loginView;
         this.registryView = registryView;
