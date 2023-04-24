@@ -9,9 +9,9 @@ public class Tabs extends TabPane {
     Tab productTab;
     Tab loginTab;
     Tab registryTab;
-    MainView mainView;
-    LoginView loginView;
-    RegistryView registryView;
+    MainView mainView = new MainView();
+    LoginView loginView = new LoginView();
+    RegistryView registryView = new RegistryView();
 
     public Tabs (MainView mainView, LoginView loginView, RegistryView registryView) {
         this.mainView = mainView;

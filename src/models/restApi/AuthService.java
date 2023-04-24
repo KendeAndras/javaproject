@@ -9,11 +9,12 @@ public class AuthService {
 
     public AuthService() {
     }
-    public void registry(int id, String name, String email, String pass) {
+
+    public void registry(String name, String email, String pass, String passC) {
         String enpoint = "register";
         String url = this.host + enpoint;
 
-        User uData = new User(id, name, email, pass, pass);
+        User uData = new User(name, email, pass, passC);
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
         Gson gson = builder.create();
@@ -25,8 +26,7 @@ public class AuthService {
     
         HttpClient http = new HttpClient();
         String result = http.post(url, jsonData, headers);
-        System.out.println(http.getResponseCode());
-        System.out.println(result);
+        
     }
     
     public void login(){

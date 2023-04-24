@@ -17,6 +17,8 @@ public class MainController {
 
     public MainController() {
         this.mainView = new MainView();
+        this.loginView = new LoginView();
+        this.registryView = new RegistryView();
         this.tab = new Tabs(this.mainView, this.loginView, this.registryView);
         
     }

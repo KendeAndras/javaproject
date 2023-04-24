@@ -3,6 +3,7 @@ package views.userViews;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import models.restApi.AuthService;
 
 public class RegistryView extends VBox {
     UserInputView userInputView = new UserInputView();
@@ -14,11 +15,14 @@ public class RegistryView extends VBox {
     TextField nameField;
     TextField emailField;
     TextField passField;
-    TextField assConfirmField;
+    TextField passConfirmField;
 
     public RegistryView() {
         this.AddToTab();
         this.setTextToNameLabel(nameLabel);
+        this.setTextToEmailLabel(emailLabel);
+        this.setTextToPassLabel(passLabel);
+        this.setTextPassConfirmLabel(passConfirmLabel);
     }
 
     private void AddToTab() {
@@ -33,11 +37,57 @@ public class RegistryView extends VBox {
         this.passField = userInputView.field;
 
         this.passConfirmLabel = userInputView.label;
-        this.assConfirmField = userInputView.field;
+        this.passConfirmField = userInputView.field;
     }
 
-    private void setTextToNameLabel(Label nameLabel){
-        this.text = "Név";
+    private void setTextToNameLabel(Label nameLabel) {
+        this.text = "Név:";
         nameLabel.setText(text);
+    }
+
+    private void setTextToEmailLabel(Label emailLabel) {
+        this.text = "Email:";
+        emailLabel.setText(text);
+    }
+
+    private void setTextToPassLabel(Label passLabel) {
+        this.text = "Jelszó:";
+        passLabel.setText(text);
+    }
+
+    private void setTextPassConfirmLabel(Label passConfirmLabel) {
+        this.text = "Jelszó újra";
+        passConfirmLabel.setText(text);
+    }
+
+    private String getName(){
+        String name = this.nameField.getText();
+        return name;
+    }
+
+    private String getEmail(){
+        String email = this.emailField.getText();
+        return email;
+    }
+
+    private String getPass(){
+        String pass = this.passField.getText();
+        return pass;
+    }
+
+    private String getPassC(){
+        String passConfirm = this.passConfirmField.getText();
+        return passConfirm;
+    }
+    
+    public void newUser(){
+        AuthService authService = new AuthService();
+
+        String name = this.getName();
+        String email = this.getEmail();
+        String pass = this.getPass();
+        String passConfirm = this.getPassC();
+
+        authService.registry(name, email, pass, passConfirm);
     }
 }

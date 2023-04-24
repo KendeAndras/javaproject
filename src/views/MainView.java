@@ -42,9 +42,9 @@ public class MainView extends VBox {
         brandCol.setMinWidth(60);
         brandCol.setCellValueFactory(new PropertyValueFactory<>("brand"));
 
-        TableColumn<Product, String> descriptCol = new TableColumn<>("Márka");
+        TableColumn<Product, String> descriptCol = new TableColumn<>("Leírás");
         descriptCol.setMinWidth(100);
-        descriptCol.setCellValueFactory(new PropertyValueFactory<>("brand"));
+        descriptCol.setCellValueFactory(new PropertyValueFactory<>("description"));
         
         TableColumn<Product, Double> priceCol = new TableColumn<>("Ár");
         priceCol.setMinWidth(60);
@@ -58,6 +58,7 @@ public class MainView extends VBox {
         tableView.getColumns().add(nameCol);
         tableView.getColumns().add(catgCol);
         tableView.getColumns().add(brandCol);
+        tableView.getColumns().add(descriptCol);
         tableView.getColumns().add(priceCol);
         //tableView.getColumns().add(imgCol);
         

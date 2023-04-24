@@ -1,6 +1,6 @@
 ## details:
 
--Version : 0.1.2
+-Version : 0.2.0
 -Dev Environoment : vscode
 -Java version : java 17.0.1 2021-10-19 LTS
 -Platform : Windows10 Pro x64
@@ -23,6 +23,8 @@
             javafx.web.jar
             javafx-swt.jar
     -as ReferencedLibrary to the project
+    -javaFX components
+            -modify:  "vmArgs" to actual javaFx library
 
 -TO RUN : vscode : "Run" >> "Run Without Debugging"
         OR

@@ -6,9 +6,12 @@ import models.restApi.AuthService;
 import views.Tabs;
 
 public class App extends Application {
+
     public static void main(String[] args) {
         launch(args);
     }
+
+    @Override
     public void start(Stage stage) {
 
         new AuthService();
@@ -19,6 +22,8 @@ public class App extends Application {
         
         Scene scene = new Scene(tab, 1000, 1000);
         stage.setScene(scene);
+        stage.setTitle("Javaproject");
         stage.show();
     }
+
 }
