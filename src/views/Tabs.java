@@ -13,13 +13,13 @@ public class Tabs extends TabPane {
     LoginView loginView = new LoginView();
     RegistryView registryView = new RegistryView();
 
-    public Tabs (MainView mainView, LoginView loginView, RegistryView registryView) {
+    public Tabs(MainView mainView, LoginView loginView, RegistryView registryView) {
         this.mainView = mainView;
         this.loginView = loginView;
         this.registryView = registryView;
         this.initComponent();
         this.addComponent();
-        
+
     }
 
     private void initComponent() {
@@ -32,7 +32,7 @@ public class Tabs extends TabPane {
         this.getTabs().add(this.productTab);
         this.getTabs().add(this.loginTab);
         this.getTabs().add(this.registryTab);
-    }
-    
-}
 
+    }
+
+}

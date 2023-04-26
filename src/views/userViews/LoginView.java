@@ -3,6 +3,7 @@ package views.userViews;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import models.restApi.AuthService;
 
 public class LoginView extends VBox {
     UserInputView userInputView = new UserInputView();
@@ -11,13 +12,13 @@ public class LoginView extends VBox {
     Label passLabel;
     TextField nameField;
     TextField passField;
-    
+
     public LoginView() {
         this.AddToTab();
         this.setTextToNameLabel(nameLabel);
         this.setTextToPassLabel(passLabel);
     }
-    
+
     private void AddToTab() {
 
         this.nameLabel = userInputView.label;
@@ -36,5 +37,25 @@ public class LoginView extends VBox {
     private void setTextToPassLabel(Label passLabel) {
         this.text = "Jelszó:";
         passLabel.setText(text);
+    }
+
+    private String getName() {
+        String name = this.nameField.getText();
+        return name;
+    }
+
+    private String getPass() {
+        String pass = this.passField.getText();
+        return pass;
+    }
+
+    public void userLog() {
+        AuthService authService = new AuthService();
+
+        String name = this.getName();
+        String pass = this.getPass();
+
+        authService.login(name, pass);
+        ;
     }
 }

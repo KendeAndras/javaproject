@@ -15,14 +15,14 @@ public class App extends Application {
     public void start(Stage stage) {
 
         new AuthService();
-        //TODO: authentication
+        // TODO: authentication
 
         MainController mainController = new MainController();
         Tabs tab = mainController.getTab();
-        
+
         Scene scene = new Scene(tab, 1000, 1000);
         stage.setScene(scene);
-        stage.setTitle("Javaproject");
+        stage.setTitle("Football Marketplace");
         stage.show();
     }
 

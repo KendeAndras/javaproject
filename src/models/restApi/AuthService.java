@@ -11,8 +11,8 @@ public class AuthService {
     }
 
     public void registry(String name, String email, String pass, String passC) {
-        String enpoint = "register";
-        String url = this.host + enpoint;
+        String endpoint = "register";
+        String url = this.host + endpoint;
 
         User uData = new User(name, email, pass, passC);
         GsonBuilder builder = new GsonBuilder();
@@ -23,16 +23,27 @@ public class AuthService {
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         headers.put("Accept", "application/json");
-    
+
         HttpClient http = new HttpClient();
         String result = http.post(url, jsonData, headers);
-        
-    }
-    
-    public void login(){
-        String enpoint = "login";
-        String url = this.host + enpoint;
 
-            //TODO
+    }
+
+    public void login(String name, String pass) {
+        String endpoint = "login";
+        String url = this.host + endpoint;
+
+        User uData = new User(name, pass);
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+        String jsonData = gson.toJson(uData);
+
+        HashMap<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json");
+        headers.put("Accept", "application/json");
+
+        HttpClient http = new HttpClient();
+        String result = http.post(url, jsonData, headers);
     }
 }

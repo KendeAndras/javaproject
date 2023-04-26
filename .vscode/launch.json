@@ -6,7 +6,7 @@
             "name": "Launch App" ,
             "request": "launch",
             "mainClass": "App",
-            "vmArgs": "--module-path C:/Users/Lenovo T450/Desktop/prog/lib --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path C:/Users/diak/Desktop/mp/javafx/lib --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
@@ -14,7 +14,7 @@
             "request": "launch",
             "mainClass": "App",
             "projectName": "javaproject_69229256",
-            "vmArgs": "--module-path C:/Users/Lenovo T450/Desktop/prog/lib --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path C:/Users/diak/Desktop/mp/javafx/lib --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }

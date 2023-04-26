@@ -12,6 +12,11 @@ public class User {
         this.email = email;
         this.password = password;
         this.confirm_password = confirm_password;
-        
+
+    }
+
+    public User(String name, String password) {
+        this.name = name;
+        this.password = password;
     }
 }
