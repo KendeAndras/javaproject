@@ -1,20 +1,21 @@
 {
+    
     "version": "0.2.0",
     "configurations": [
         {
             "type": "java",
-            "name": "Launch App" ,
+            "name": "Launch" ,
             "request": "launch",
             "mainClass": "App",
-            "vmArgs": "--module-path C:/Users/diak/Desktop/mp/javafx/lib --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path /Users/Lenovo T450/Desktop/prog/lib --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",
-            "name": "Launch App",
+            "name": "Launch",
             "request": "launch",
             "mainClass": "App",
             "projectName": "javaproject_69229256",
-            "vmArgs": "--module-path C:/Users/diak/Desktop/mp/javafx/lib --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path /Users/Lenovo T450/Desktop/prog/lib --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }

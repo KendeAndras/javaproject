@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Product;
+import views.CartView;
 import views.MainView;
 import views.Tabs;
 import views.userViews.LoginView;
@@ -11,6 +12,7 @@ public class MainController {
     MainView mainView;
     LoginView loginView;
     RegistryView registryView;
+    CartView cartView;
     Tabs tab;
     Product product;
     Product soldProd;
@@ -19,7 +21,7 @@ public class MainController {
         this.mainView = new MainView();
         this.loginView = new LoginView();
         this.registryView = new RegistryView();
-        this.tab = new Tabs(this.mainView, this.loginView, this.registryView);
+        this.tab = new Tabs(this.mainView, this.cartView, this.loginView, this.registryView);
         
     }
 
@@ -27,14 +29,8 @@ public class MainController {
         return this.tab;
     }
 
-    public Product addToCart(Product product) {
-        //TODO (incoming products going first here)
-        product = this.product;
-        return product;
-    }
-
     public void buyProduct(){
-        soldProd = this.addToCart(product);
+    
         // TODO handle output product
     }
     
