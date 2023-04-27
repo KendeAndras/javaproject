@@ -27,6 +27,11 @@ public class LoginView extends VBox {
         this.passLabel = userInputView.label;
         this.passField = userInputView.field;
 
+        this.getChildren().add(nameField);
+        this.getChildren().add(nameLabel);
+        this.getChildren().add(passLabel);
+        this.getChildren().add(passField);
+
     }
 
     private void setTextToNameLabel(Label nameLabel) {

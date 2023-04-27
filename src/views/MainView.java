@@ -74,7 +74,7 @@ public class MainView extends VBox {
     }
 
     
-    public ObservableList<Product> getData(){
+    public ObservableList<Product> getSelectedItems(){
 
         ObservableList<Product> selectedProducts = FXCollections.observableArrayList();
 
@@ -86,9 +86,7 @@ public class MainView extends VBox {
 
                     Product selectedProduct = row.getItem();
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Selected Product");
-                    alert.setHeaderText(null);
-                    alert.setContentText("You have selected: " + selectedProduct.getName());
+                    alert.setTitle("Termék");
 
                     ButtonType addToListBtn = new ButtonType("Kosárba");
                     ButtonType closeBtn = new ButtonType("OK");
@@ -107,4 +105,11 @@ public class MainView extends VBox {
         });
         return selectedProducts;
     }
+
+
+    public ObservableList<Product> getSelectedProducts() {
+        return selectedProducts;
+    }
+
+    
 }

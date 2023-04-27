@@ -38,6 +38,15 @@ public class RegistryView extends VBox {
 
         this.passConfirmLabel = userInputView.label;
         this.passConfirmField = userInputView.field;
+
+        this.getChildren().add(nameLabel);
+        this.getChildren().add(nameField);
+        this.getChildren().add(emailLabel);
+        this.getChildren().add(emailField);
+        this.getChildren().add(passLabel);
+        this.getChildren().add(passField);
+        this.getChildren().add(passConfirmLabel);
+        this.getChildren().add(passConfirmField);
     }
 
     private void setTextToNameLabel(Label nameLabel) {

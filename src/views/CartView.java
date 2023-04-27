@@ -2,6 +2,8 @@ package views;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
@@ -30,9 +32,7 @@ public class CartView extends VBox {
 
 
     public ObservableList<Product> addSelectedProducts(TableView<Product> tableView) {
-        for (Product product : tableView.getSelectionModel().getSelectedItems()) {
-            productList.add(product);
-        }
+        ObservableList<Product> productList = FXCollections.observableArrayList(mainView.getSelectedProducts());
         return productList;
     }
 
