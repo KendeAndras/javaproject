@@ -8,14 +8,14 @@ import models.restApi.AuthService;
 public class RegistryView extends VBox {
     UserInputView userInputView = new UserInputView();
     String text;
-    Label nameLabel;
-    Label emailLabel;
-    Label passLabel;
-    Label passConfirmLabel;
-    TextField nameField;
-    TextField emailField;
-    TextField passField;
-    TextField passConfirmField;
+    Label nameLabel = new Label();
+    Label emailLabel = new Label();
+    Label passLabel  = new Label();
+    Label passConfirmLabel  = new Label();
+    TextField nameField  = new TextField();
+    TextField emailField = new TextField();
+    TextField passField = new TextField();
+    TextField passConfirmField = new TextField();
 
     public RegistryView() {
         this.AddToTab();
