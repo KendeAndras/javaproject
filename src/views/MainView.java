@@ -16,7 +16,7 @@ import models.restApi.RestApi;
 
 public class MainView extends VBox {
     Label prodLabel;
-    RestApi restapi;
+    RestApi restapi = new RestApi();
     TableView<Product> tableView;
     ObservableList<Product> selectedProducts;
 
