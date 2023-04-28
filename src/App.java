@@ -2,7 +2,6 @@ import controllers.MainController;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import models.restApi.AuthService;
 import views.Tabs;
 
 public class App extends Application {
@@ -13,9 +12,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) {
-
-        new AuthService();
-        // TODO: authentication
 
         MainController mainController = new MainController();
         Tabs tab = mainController.getTab();

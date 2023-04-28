@@ -6,11 +6,12 @@ import com.google.gson.GsonBuilder;
 
 public class AuthService {
     String host = "http://localhost:8000/api/";
+    String result;
 
     public AuthService() {
     }
 
-    public void registry(String name, String email, String pass, String passC) {
+    public String registry(String name, String email, String pass, String passC) {
         String endpoint = "register";
         String url = this.host + endpoint;
 
@@ -25,11 +26,11 @@ public class AuthService {
         headers.put("Accept", "application/json");
 
         HttpClient http = new HttpClient();
-        String result = http.post(url, jsonData, headers);
+        return this.result = http.post(url, jsonData, headers);
 
     }
 
-    public void login(String name, String pass) {
+    public String login(String name, String pass) {
         String endpoint = "login";
         String url = this.host + endpoint;
 
@@ -44,6 +45,8 @@ public class AuthService {
         headers.put("Accept", "application/json");
 
         HttpClient http = new HttpClient();
-        String result = http.post(url, jsonData, headers);
+        return this.result = http.post(url, jsonData, headers);
+
     }
+  
 }

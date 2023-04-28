@@ -12,6 +12,7 @@ public class LoginView extends VBox {
     Label passLabel;
     TextField nameField;
     TextField passField;
+    String token;
 
     public LoginView() {
         this.AddToTab();
@@ -60,7 +61,7 @@ public class LoginView extends VBox {
         String name = this.getName();
         String pass = this.getPass();
 
-        authService.login(name, pass);
-        ;
+        String token = authService.login(name, pass);
+        
     }
 }
