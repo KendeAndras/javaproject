@@ -1,10 +1,12 @@
 package views;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import java.util.ArrayList;
 import java.util.List;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -17,6 +19,8 @@ public class CartView extends VBox {
     private ObservableList<Product> productList;
     TableView<Product> tableView;
     Label cartLabel;
+    String text;
+    Button button;
 
     public CartView(){}
 
@@ -28,6 +32,8 @@ public class CartView extends VBox {
         this.createTable();
         this.getChildren().add(cartLabel);
         this.getChildren().add(tableView);
+        this.setTextToButton();
+        this.setButtonAction();
     }
 
 
@@ -82,5 +88,17 @@ public class CartView extends VBox {
         return selectedIds;
     }
     
+    private void setTextToButton() {
+        this.text = "Vásárlás";
+        button.setText(text);
+    }
+
+    private void setButtonAction() {
+        button.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent aEvent) {
+                buy();
+            }
+        });
+    }
 }
 

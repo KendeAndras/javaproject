@@ -1,5 +1,6 @@
 package views;
 
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import views.userViews.LoginView;
@@ -14,6 +15,7 @@ public class Tabs extends TabPane {
     LoginView loginView = new LoginView();
     RegistryView registryView = new RegistryView();
     CartView cartView = new CartView();
+    Label infoLabel;
 
     public Tabs(MainView mainView,  CartView cartView, LoginView loginView, RegistryView registryView) {
         this.mainView = mainView;
@@ -26,6 +28,7 @@ public class Tabs extends TabPane {
     }
 
     private void initComponent() {
+        this.infoLabel = new Label("Belépés szükséges a vásárláshoz");
         this.productTab = new Tab("Termékeink", this.mainView);
         this.cartTab = new Tab("Kosár", this.cartView);
         this.loginTab = new Tab("Belépés", this.loginView);
@@ -33,10 +36,15 @@ public class Tabs extends TabPane {
     }
 
     private void addComponent() {
+        this.getChildren().add(infoLabel);
         this.getTabs().add(this.productTab);
         this.getTabs().add(this.cartTab);
         this.getTabs().add(this.loginTab);
         this.getTabs().add(this.registryTab);
     }
 
+    public void setLabelText(String text){
+        this.infoLabel.setText(text);
+    }
+    
 }
