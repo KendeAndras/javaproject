@@ -20,7 +20,7 @@ public class CartView extends VBox {
     TableView<Product> tableView;
     Label cartLabel;
     String text;
-    Button button;
+    Button button = new Button();
 
     public CartView(){}
 
@@ -32,6 +32,7 @@ public class CartView extends VBox {
         this.createTable();
         this.getChildren().add(cartLabel);
         this.getChildren().add(tableView);
+        this.getChildren().add(button);
         this.setTextToButton();
         this.setButtonAction();
     }
