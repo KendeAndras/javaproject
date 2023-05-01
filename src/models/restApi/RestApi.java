@@ -4,26 +4,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-
 import models.Product;
+import views.Tabs;
 
 public class RestApi {
+    Tabs tab;
 
     public RestApi() {
     }
 
     public String getProductsAsString() {
-
         String host = "http://localhost:8000/api/";
         String endpoint = "show";
         String urlStr = host + endpoint;
         HttpClient http = new HttpClient();
-        String res = http.get(urlStr);
+        String res = null;
+        try {
+            res = http.get(urlStr);
+        } catch (Exception e) {
+            System.err.println("Hiba, nincs Server");
+        }
         return res;
     }
+    
 
     public ArrayList<Product> getProducts() {
         
@@ -39,17 +44,20 @@ public class RestApi {
         String host = "http://localhost:8000/api/";
         String endpoint = "delete/";
         String urlStr = host + endpoint;
-
-        GsonBuilder builder = new GsonBuilder();
-        builder.setPrettyPrinting();
-        Gson gson = builder.create();
-        String jsonData = gson.toJson(list);
-
+    
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
+    
         HttpClient http = new HttpClient();
-        
-
-        http.post(urlStr, jsonData, headers);
+        for (Integer productId : list) {
+            try {
+                String jsonData = "{\"id\": " + productId.toString() + "}";
+                http.post(urlStr, jsonData, headers);
+            } catch (Exception e) {
+                String text = "Sikertelen Vásárlás";
+                tab.setLabelText(text);
+            }
+        }
     }
+    
 }

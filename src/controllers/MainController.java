@@ -37,8 +37,8 @@ public class MainController {
 
     public void buyProduct(ArrayList<Integer> prodList){
 
-        String text = "Sikeres Vásárlás";
         restApi.productsBought(prodList);
+        String text = "Sikeres Vásárlás";
         tab.setLabelText(text);
     }
     
