@@ -2,6 +2,7 @@ package views.userViews;
 
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import controllers.MainController;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -111,7 +112,10 @@ public class RegistryView extends VBox {
         String pass = this.getPass();
         String passConfirm = this.getPassC();
 
-        authService.registry(name, email, pass, passConfirm);
+        String token = authService.registry(name, email, pass, passConfirm);
+        
+        MainController mainController = new MainController();
+        mainController.setToken(token);
     }
 
     private void setButtonAction() {

@@ -1,6 +1,6 @@
 package controllers;
 
-import models.Product;
+import java.util.ArrayList;
 import views.CartView;
 import views.MainView;
 import views.Tabs;
@@ -16,7 +16,6 @@ public class MainController {
     CartView cartView;
     Tabs tab;
     String token;
-    Product soldProd;
     RestApi restApi = new RestApi();
 
     public MainController() {
@@ -36,9 +35,10 @@ public class MainController {
         this.token = token;
     }
 
-    public void buyProduct(){
+    public void buyProduct(ArrayList<Integer> prodList){
+
         String text = "Sikeres Vásárlás";
-        restApi.productsBought(cartView.buy());
+        restApi.productsBought(prodList);
         tab.setLabelText(text);
     }
     

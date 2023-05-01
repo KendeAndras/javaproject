@@ -18,7 +18,7 @@ public class RestApi {
     public String getProductsAsString() {
 
         String host = "http://localhost:8000/api/";
-        String endpoint = "products";
+        String endpoint = "show";
         String urlStr = host + endpoint;
         HttpClient http = new HttpClient();
         String res = http.get(urlStr);
@@ -37,11 +37,19 @@ public class RestApi {
 
     public void productsBought(List<Integer> list) {
         String host = "http://localhost:8000/api/";
-        String endpoint = "products/" + list;
+        String endpoint = "delete/";
         String urlStr = host + endpoint;
+
+        GsonBuilder builder = new GsonBuilder();
+        builder.setPrettyPrinting();
+        Gson gson = builder.create();
+        String jsonData = gson.toJson(list);
+
         HashMap<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         HttpClient http = new HttpClient();
-        http.delete(urlStr, headers);
+        
+
+        http.post(urlStr, jsonData, headers);
     }
 }

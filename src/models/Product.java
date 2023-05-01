@@ -7,7 +7,6 @@ public class Product {
     String brand;
     String description;
     Double price;
-    String image;
 
     public Product() {
     }

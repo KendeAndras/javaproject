@@ -95,31 +95,6 @@ public class HttpClient {
     public int getResponseCode() {
         return responseCode;
     }
-    public String delete(String url, HashMap<String, String> headers) {
-        String result;
-        try {
-            result = tryDelete(url, headers);
-        } catch (IOException e) {
-            String msg = "Hiba! A REST API elérés sikertelen!";
-            System.err.println(msg);
-            result = msg;
-        }
-        return result;
-    }
-    
-    public String tryDelete(String urlStr, HashMap<String, String> headers) throws IOException {
-        URL url = new URL(urlStr);
-        HttpURLConnection http = (HttpURLConnection) url.openConnection();
-        http.setRequestMethod("DESTROY");
-        
-        for( Map.Entry<String, String> entry : headers.entrySet()) {
-            http.setRequestProperty(entry.getKey(), entry.getValue());
-        }
-        
-        this.responseCode = http.getResponseCode();
-        InputStream inputStream = http.getInputStream();
-        String text = convertInputStreamToString(inputStream);
-        return text;
-    }
+
     
 }

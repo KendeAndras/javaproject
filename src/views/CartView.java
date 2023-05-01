@@ -3,7 +3,7 @@ package views;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import java.util.ArrayList;
-import java.util.List;
+import controllers.MainController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
@@ -20,6 +20,7 @@ public class CartView extends VBox {
     TableView<Product> tableView;
     Label cartLabel;
     String text;
+    ArrayList<Integer> selectedIds;
     Button button = new Button();
 
     public CartView(){}
@@ -39,7 +40,7 @@ public class CartView extends VBox {
 
 
     public ObservableList<Product> addSelectedProducts(TableView<Product> tableView) {
-        ObservableList<Product> productList = FXCollections.observableArrayList(mainView.getSelectedProducts());
+        ObservableList<Product> productList = FXCollections.observableArrayList(mainView.getSelectedItems());
         return productList;
     }
 
@@ -81,12 +82,11 @@ public class CartView extends VBox {
         tableView.getColumns().add(priceCol);
     }
 
-    public List<Integer> buy() {
-        List<Integer> selectedIds = new ArrayList<>();
+    public void boughtProducts() {
+        this.selectedIds = new ArrayList<>();
         for (Product product : productList) {
             selectedIds.add(product.getId());
         }
-        return selectedIds;
     }
     
     private void setTextToButton() {
@@ -97,7 +97,9 @@ public class CartView extends VBox {
     private void setButtonAction() {
         button.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent aEvent) {
-                buy();
+                MainController mainController = new MainController();
+                boughtProducts();
+                mainController.buyProduct(selectedIds);
             }
         });
     }

@@ -106,10 +106,4 @@ public class MainView extends VBox {
         return selectedProducts;
     }
 
-
-    public ObservableList<Product> getSelectedProducts() {
-        return selectedProducts;
-    }
-
-    
 }

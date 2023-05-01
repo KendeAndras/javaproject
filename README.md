@@ -1,6 +1,6 @@
 ## details:
 
-* Version : 1.1.1
+* Version : 1.1.2
 * Dev Environoment : vscode
 * Java version : java 17.0.1 2021-10-19 LTS
 * Platform : Windows10 Pro x64
