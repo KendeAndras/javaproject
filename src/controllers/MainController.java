@@ -14,17 +14,17 @@ public class MainController {
     LoginView loginView;
     RegistryView registryView;
     CartView cartView;
-    Tabs tab;
+    Tabs tab; 
     String token;
     RestApi restApi = new RestApi();
 
     public MainController() {
-        this.isLoggedIn(this.token);
         this.mainView = new MainView();
+        this.cartView = new CartView();
         this.loginView = new LoginView();
         this.registryView = new RegistryView();
         this.tab = new Tabs(this.mainView, this.cartView, this.loginView, this.registryView);
-        
+        this.isLoggedIn(this.token);
     }
 
     public Tabs getTab() {
@@ -33,6 +33,7 @@ public class MainController {
 
     public void setToken(String token) {
         this.token = token;
+        this.isLoggedIn(token);
     }
 
     public void buyProduct(ArrayList<Integer> prodList){
@@ -44,14 +45,10 @@ public class MainController {
     
     public void isLoggedIn(String token){
         token = this.token;
-        if (token == "") {
-            mainView.setVisible(false);
-            cartView.setVisible(false);
-        }
-        else {
+        tab = getTab();
+        if (token != "") {
+            tab.addTabs();
             String text = "Bejelentkezve";
-            mainView.setVisible(true);
-            cartView.setVisible(true);
             tab.setLabelText(text);
         }
     }

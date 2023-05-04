@@ -37,12 +37,16 @@ public class Tabs extends TabPane {
 
     private void addComponent() {
         this.getChildren().add(infoLabel);
-        this.getTabs().add(this.productTab);
-        this.getTabs().add(this.cartTab);
         this.getTabs().add(this.loginTab);
         this.getTabs().add(this.registryTab);
     }
 
+    public void addTabs() {
+        this.getTabs().add(this.productTab);
+        this.getTabs().add(this.cartTab);
+    }
+    
+    
     public void setLabelText(String text){
         this.infoLabel.setText(text);
     }

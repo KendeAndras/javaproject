@@ -23,12 +23,9 @@ public class CartView extends VBox {
     ArrayList<Integer> selectedIds;
     Button button = new Button();
 
-    public CartView(){}
-
-    public CartView(ObservableList<Product> productList) {
+    public CartView(){
         cartLabel = new Label("Kosár");
 
-        this.productList = productList;
         this.addSelectedProducts(tableView);
         this.createTable();
         this.getChildren().add(cartLabel);
@@ -36,6 +33,10 @@ public class CartView extends VBox {
         this.getChildren().add(button);
         this.setTextToButton();
         this.setButtonAction();
+    }
+
+    public CartView(ObservableList<Product> productList) {
+        this.productList = productList;
     }
 
 

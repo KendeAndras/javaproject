@@ -10,7 +10,6 @@ import javafx.scene.layout.VBox;
 import models.restApi.AuthService;
 
 public class RegistryView extends VBox {
-    UserInputView userInputView = new UserInputView();
     String text;
     Label nameLabel;
     Label emailLabel;
@@ -34,19 +33,19 @@ public class RegistryView extends VBox {
 
     private void AddToTab() {
 
-        this.nameLabel = userInputView.label;
-        this.nameField = userInputView.field;
+        this.nameLabel = new Label();
+        this.nameField = new TextField();
 
-        this.emailLabel = userInputView.label;
-        this.emailField = userInputView.field;
+        this.emailLabel = new Label();
+        this.emailField = new TextField();
 
-        this.passLabel = userInputView.label;
-        this.passField = userInputView.field;
+        this.passLabel = new Label();
+        this.passField = new TextField();
 
-        this.passConfirmLabel = userInputView.label;
-        this.passConfirmField = userInputView.field;
+        this.passConfirmLabel = new Label();
+        this.passConfirmField = new TextField();
 
-        this.registryButton = userInputView.button;;
+        this.registryButton = new Button();
 
         this.getChildren().add(nameLabel);
         this.getChildren().add(nameField);

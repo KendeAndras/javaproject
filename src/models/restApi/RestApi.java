@@ -17,7 +17,7 @@ public class RestApi {
 
     public String getProductsAsString() {
         String host = "http://localhost:8000/api/";
-        String endpoint = "show";
+        String endpoint = "Products";
         String urlStr = host + endpoint;
         HttpClient http = new HttpClient();
         String res = null;
@@ -42,7 +42,7 @@ public class RestApi {
 
     public void productsBought(List<Integer> list) {
         String host = "http://localhost:8000/api/";
-        String endpoint = "delete/";
+        String endpoint = "delete";
         String urlStr = host + endpoint;
     
         HashMap<String, String> headers = new HashMap<>();

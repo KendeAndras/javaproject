@@ -66,6 +66,7 @@ public class MainView extends VBox {
         tableView.getColumns().add(descriptCol);
         tableView.getColumns().add(priceCol);
 
+
     }
 
     private ObservableList<Product> getProducts() {

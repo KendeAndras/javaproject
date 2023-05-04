@@ -30,6 +30,12 @@
         OR
         push "Ctrl+F5" combination on Windows
 
+* HOW TO GET JAVAFX
+        * https://gluonhq.com/products/javafx/
+
+* HOW TO GET GSON
+        * https://github.com/google/gson
+
 ## licence:
 
 * Author: KorcsmarosKendeAndras

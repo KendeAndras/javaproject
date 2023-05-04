@@ -8,7 +8,7 @@
             "name": "Launch" ,
             "request": "launch",
             "mainClass": "App",
-            "vmArgs": "--module-path C:/Users/Public/Football_marketplace/lib --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path c:\\Users\\diak\\Desktop\\projects\\Library\\javafx\\javafx-sdk-19\\lib\\ --add-modules javafx.controls,javafx.fxml"
         },
         {
             "type": "java",

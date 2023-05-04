@@ -10,7 +10,6 @@ import javafx.scene.layout.VBox;
 import models.restApi.AuthService;
 
 public class LoginView extends VBox {
-    UserInputView userInputView = new UserInputView();
     String text;
     Label nameLabel;
     Label passLabel;
@@ -29,14 +28,16 @@ public class LoginView extends VBox {
 
     private void AddToTab() {
 
-        this.nameLabel = userInputView.label;
-        this.nameField = userInputView.field;
+        nameLabel = new Label();
+        nameField = new TextField();
 
-        this.passLabel = userInputView.label;
-        this.passField = userInputView.field;
+        passLabel = new Label();
+        passField = new TextField();
 
-        this.getChildren().add(nameField);
+        logButton = new Button();
+
         this.getChildren().add(nameLabel);
+        this.getChildren().add(nameField);
         this.getChildren().add(passLabel);
         this.getChildren().add(passField);
         this.getChildren().add(logButton);
